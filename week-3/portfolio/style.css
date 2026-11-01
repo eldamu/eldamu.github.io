@@ -1,3 +1,107 @@
 *{
-    background-color: blue; 
+    --div-color: rgba(160,170,190, 0.8); 
+    --left-div-background: rgb(20,10,10); 
+    --header-text: rgb(240, 240, 240); 
 }
+
+body{
+    margin: 0;
+    overflow: hidden;
+}
+
+h1, h2, h3 { 
+    font-family: "Anek Latin", sans-serif;
+    color: var(--header-text);
+}
+
+p, li, button{ 
+    font-family: "Martian Mono";
+    font-size: 12px;
+    color: var(--left-div-background);
+}
+
+button:hover  {
+    background-color: var(--left-div-background);
+    color: var(--header-text);
+}
+
+#main-container {
+    display: flex;
+    width: 100vw; 
+    height: 100vh;
+}
+
+.container {
+    width: 100vh;
+    height: 100vh;
+}
+
+#left-container {
+    width: 50vw;
+    background-color: var(--left-div-background);
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    position: relative;
+}
+
+img {
+    max-width: 100vh;
+    max-height: 92vh; 
+    object-fit: contain;
+}
+
+#header-bar{
+    height: 8vh;
+    position: relative; 
+    display: flex;
+    flex-direction: row; 
+    background-color: var(--header-text);
+    align-items: center;
+    justify-content: space-between;
+}
+
+#name { 
+    color: var(--left-div-background);
+}
+
+#name > h1 { 
+    color: var(--left-div-background);
+    font-size: 4rem;
+}
+.icons { 
+    height: 8vh; 
+    align-content: center;
+    justify-content: center;
+    gap: 1vw;
+}
+
+.icons > a{
+    text-decoration: none; 
+}
+
+.icons > a > img{ 
+    height: 60%;
+}
+
+
+#right-container {
+    background-image: url("./assets/css-pattern-by-magicpattern.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Div scroll reference: https://stackoverflow.com/questions/21227287/make-div-scrollable*/
+#right-main-container {
+    width: 80%;
+    height: 80%;
+    background-color: var(--div-color); 
+    padding: 12px;
+    overflow: auto;
+}
+
+
+
