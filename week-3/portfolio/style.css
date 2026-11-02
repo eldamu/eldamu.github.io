@@ -1,7 +1,9 @@
 *{
-    --div-color: rgba(160,170,190, 0.8); 
+    --div-color: rgba(160,170,190, 0.75); 
     --left-div-background: rgb(20,10,10); 
+    --card-color: rgba(20,10,10,0.9); 
     --header-text: rgb(240, 240, 240); 
+    --light-brown: rgb(150,120,90); 
 }
 
 body{
@@ -10,19 +12,32 @@ body{
 }
 
 h1, h2, h3 { 
-    font-family: "Anek Latin", sans-serif;
-    color: var(--header-text);
-}
-
-p, li, button{ 
-    font-family: "Martian Mono";
-    font-size: 12px;
+    font-family: "Martian Mono", monospace;
     color: var(--left-div-background);
 }
 
-button:hover  {
+h2 { 
+    margin: 0; 
+}
+
+p, li, button{ 
+    font-family: "Anek Latin", sans-serif;
+    font-size: 18px;
+}
+
+p, li { 
+    color: var(--header-text);
+}
+
+button { 
     background-color: var(--left-div-background);
     color: var(--header-text);
+    border-radius:12px;
+}
+
+button:hover  {
+    background-color: var(--header-text);
+    color: var(--light-brown);
 }
 
 #main-container {
@@ -59,6 +74,8 @@ img {
     background-color: var(--header-text);
     align-items: center;
     justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
 #name { 
@@ -67,8 +84,10 @@ img {
 
 #name > h1 { 
     color: var(--left-div-background);
-    font-size: 4rem;
+    font-size: 3rem;
 }
+
+
 .icons { 
     height: 8vh; 
     align-content: center;
@@ -76,7 +95,7 @@ img {
     gap: 1vw;
 }
 
-.icons > a{
+.icons > a {
     text-decoration: none; 
 }
 
@@ -84,6 +103,30 @@ img {
     height: 60%;
 }
 
+@media screen and (max-width: 1150px){ 
+    #name > h1 {
+        font-size: 2rem;
+    }
+
+     .icons > a > img { 
+        height: 40%;
+    }
+}
+
+@media screen and (max-width: 900px){ 
+    #name > h1 {
+        font-size: 2rem;
+    }
+ .icons > a > img { 
+        height: 30%;
+    }
+}
+
+@media screen and (max-width: 785px){ 
+    #name > h1 {
+        font-size: 1.5rem;
+    }
+}
 
 #right-container {
     background-image: url("./assets/css-pattern-by-magicpattern.png");
@@ -99,9 +142,37 @@ img {
     width: 80%;
     height: 80%;
     background-color: var(--div-color); 
-    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
     overflow: auto;
+    position: relative;
+    border-radius: 12px;
+}
+.cards { 
+    background-color: var(--light-brown);
+    margin: 12px;
+    padding: 12px;
+    border-radius: 12px;
 }
 
+.div-card { 
+    background-color: var(--card-color);
+    margin: 12px;
+    padding: 12px;
+    border-radius: 12px;
+}
 
+.div-card > h2, h3 { 
+    color: var(--light-brown);
+}
 
+.div-card > p { 
+    color: var(--header-text); 
+}
+
+#contact >.div-card > ul{ 
+    list-style-type: none;
+    margin: 0; 
+    padding: 0;
+}
