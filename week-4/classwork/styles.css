@@ -1,0 +1,235 @@
+/*
+    font-family: "IBM Plex Mono", monospace;
+  font-family: "News Cycle",
+  sans-serif;
+
+*/
+* { 
+    --primaryWhite: white; 
+    --primaryBlack: black; 
+    --emphasisRed: #C20000;
+    font-size: 12px; 
+    font-family: "IBM Plex Mono", monospace;
+}
+
+
+body { 
+  margin: 0px;
+  padding: 0px;
+  background-color: black;
+  color: var(--primaryWhite);
+}
+
+nav { 
+  position: fixed;
+  top: 0px; 
+  left: 0px;
+  display: flex;
+  background-color: var(--primaryBlack); 
+  color: var(--primaryWhite); 
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 96px;
+  padding: 24px;
+  margin: 0 auto; 
+  z-index: 10;
+}
+
+nav > img { 
+  width: 60px;
+  height: 60px;
+}
+nav > ul { 
+  margin: 24px; 
+  flex-grow: auto;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav > ul > li { 
+  padding: 12px; 
+  margin-right: 12px;
+}
+
+nav > ul > li:hover { 
+  background-color: var(--emphasisRed);
+  color: var(--primaryBlack);
+}
+
+.hero { 
+  background-image: url("./assets/thehiss.webp");
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 36px;
+  box-sizing: border-box;
+}
+
+.hero header, .hero p { 
+  color: var(--primaryWhite);
+  margin: 0 auto; 
+  z-index: 9; 
+}
+
+.hero header { 
+  font-size: 60px;
+}
+
+.hero p { 
+  font-size: 48px;
+}
+
+#overlay { 
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(7, 7, 7, 0.5);
+  z-index: 8;
+}
+
+.message, .director { 
+  display: flex;
+  width: 95vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.director { 
+  padding: 0 12px;
+}
+
+#directorImage { 
+  scale: 100%;
+}
+
+h2 { 
+  font-size: 36px;
+}
+
+.contentLeft, .contentRight { 
+  color: var(--primaryWhite);
+  font-family: "News Cycle", sans-serif;
+  font-size: 1.5rem;
+  padding: 12px;
+}
+
+.contentRight > p { 
+  font-family: "News Cycle", sans-serif;
+  font-size:  1.5rem;
+}
+
+#stats { 
+  margin: 24px; 
+}
+
+.dashboard { 
+  display: grid;
+  grid-template: repeat(2, 150px) / repeat(3, 1fr); 
+  gap: 5px; 
+  color: var(--primaryBlack); 
+  padding: 24px;
+}
+
+.dashboard > div { 
+  background-color: var(--primaryWhite);
+  border-radius: 5px;
+  padding: 12px;
+}
+
+.dashboard > div > h2 {
+  color: var(--emphasisRed);
+  margin-bottom: 4px;
+}
+
+footer { 
+  display: grid;
+  grid-template-columns: 150px repeat(4,1fr);
+  column-gap: 5px;
+  justify-content: space-evenly;
+}
+
+footer > div { 
+  top: 0; 
+  left: 0; 
+  width: 1fr; 
+  height: auto;
+  padding: 12px; 
+}
+
+footer > div >  img { 
+  width: 100%;
+  height: 80%; 
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 720px){ 
+  * { 
+    font-size: 14px;
+  }
+
+  body{ 
+    overflow-x: hidden;
+  }
+
+  nav { 
+    position: fixed;
+    display: flex;
+    height: 72px; 
+    top: 0px; 
+    left: 0px; 
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0 auto; 
+  }
+
+  nav > ul { 
+    margin-left: 12px;
+  }
+
+  nav > ul > li { 
+    padding: 5px;
+    margin: 0; 
+  }
+
+  .hero { 
+    box-sizing: border-box;
+  }
+
+  .message, .director{ 
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding: 0.5rem;
+  }
+
+  #directorImage { 
+    scale: 40%; 
+  }
+
+  .message > img{ 
+    width: 100vw;
+  }
+
+  footer { 
+    background-color: white;
+    width: 100vw;
+    color: var(--primaryBlack); 
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer > div { 
+    font-size: 1rem;
+  }
+
+  footer > div > img { 
+    display: none;
+  }
+}
